@@ -5,7 +5,7 @@ import firebaseApp from '../services/firebase';
 
 const auth = getAuth(firebaseApp);
 
-export default function WithAuth(Component) {
+export default function WithAuth(Component: any) {
     useEffect(() => {
         auth.onAuthStateChanged(authUser => {
         if (!authUser) {
@@ -14,5 +14,5 @@ export default function WithAuth(Component) {
         });
     }, []);
 
-    return <Component {...props} />;
+    return <Component />;
 };
